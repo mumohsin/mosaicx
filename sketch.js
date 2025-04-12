@@ -1,6 +1,6 @@
-//this is the legal intellectual property  of Muhammad Usama Mohsin and should not be replicated or used for commercial use unless first consulting the owner of the intellectual property
 
 let x1, x2, y2, x3, y3, x4;
+let hue, sat, brt, alph, numColors, palette, col;
 let range = 250; // color range
 let field;
 
@@ -17,9 +17,9 @@ function setup() {
   let ang = 360 / petals;
   let rMax = width / 4 ;
 // fill an array with color
-  let numColors = random(4, 8);
-  let palette = [];
-  let col = random(360);
+   numColors = random(4, 8);
+   palette = [];
+   col = random(360);
   for (let p = 0; p < numColors - 1; p++) {
     palette.push(col);
     col = col + range / numColors;
@@ -28,10 +28,10 @@ function setup() {
     }
   }
 
- let hue = palette[floor(random(numColors-1))];  
-        let sat = random(50, 100);
-        let brt = random(50, 100);
-        let alph = 100; //random(40, 100);
+  hue = palette[floor(random(numColors-1))];  
+         sat = random(50, 100);
+         brt = random(50, 100);
+         alph = 100; //random(40, 100);
         fill(hue, sat, brt, alph);
      
   rectMode(CENTER);
@@ -73,10 +73,10 @@ push();
         let maxY3 = x3 * tan(ang) * 0.9;
         y3 = random(0.06 * currR, maxY3);
         x4 = random(0.88 * currR, 0.99 * currR);
-        let hue = palette[floor(random(numColors-1))];
-        let sat = 100; //random(70, 100);
-        let brt = 100; //random(70, 100);
-        let alph = 35; //random(40, 100);
+         hue = palette[floor(random(numColors-1))];
+         sat = 100; //random(70, 100);
+         brt = 100; //random(70, 100);
+         alph = 35; //random(40, 100);
         fill(hue, sat, brt, alph);
 
     // draw the petals for one layer
@@ -103,7 +103,8 @@ push();
       strokeWeight(5);
       //line(x1,0,x4,0);
       rotate(ang);
-    }rotate(ang/2); 
+    }
+    rotate(ang/2); 
   }
   pop();
 
@@ -165,6 +166,11 @@ vertex(((-width/2)+(width*3/32)), ((-height/2)+(width*3/32)));
 vertex(((-width/2)+(width*3/32)), ((height/2)-(width*3/32)));
 vertex(((-width/2)+(width/32)), ((height/2)-(width/32)));
 endShape(CLOSE);
+  
+    hue = palette[floor(random(numColors-1))];  
+         sat = random(50, 100);
+         brt = random(50, 100);
+         alph = 100; //random(40, 100);
 }
 
 
@@ -175,17 +181,18 @@ endShape(CLOSE);
   let frameY = (height - (width / 16));
   let frameX = (width - (width / 16 ));
   let borderMax = (width / 16);
+ 
     for(let x = borderMax; x < frameX+borderMax; x += (1.55*borderMax)){
         let y = borderMax;
       noStroke();
-      fill(255, 0, 255, 100);
+        fill(hue, sat, brt, alph);
       circle(x, y, 0.5* borderMax);
       
     }
       for(let y = borderMax; y < frameY+borderMax; y += (1.57*borderMax)){
        let x = borderMax;
       noStroke();
-      fill(255, 0, 255, 100);
+        fill(hue, sat, brt, alph);
       circle(x, y, 0.5* borderMax);
    }
     let frameY2 = (height - (width / 16));
@@ -194,7 +201,7 @@ endShape(CLOSE);
     for(let x2 = borderMax; x2 < frameX2+borderMax; x2 += (1.55*borderMax)){
         let y2 = borderMax2;
       noStroke();
-      fill(255, 0, 255, 100);
+        fill(hue, sat, brt, alph);
       circle(x2, y2, 0.5* borderMax);
       
     }
@@ -203,7 +210,7 @@ endShape(CLOSE);
       for(let y2 = borderMax; y2 < frameY2+borderMax; y2 += (1.57*borderMax)){
        let x2 = borderMax3;
       noStroke();
-      fill(255, 0, 255, 100);
+        fill(hue, sat, brt, alph);
       circle(x2, y2, 0.5* borderMax);
    }
  }
